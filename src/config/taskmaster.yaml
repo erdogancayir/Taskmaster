@@ -1,0 +1,17 @@
+programs:
+  sleep_test:
+    cmd: "/bin/sleep 5"
+    numprocs: 1
+    umask: 022
+    workingdir: "/tmpTEST"
+    autostart: true
+    autorestart: "unexpected"
+    exitcodes: [0]
+    startretries: 2
+    starttime: 2
+    stopsignal: TERM
+    stoptime: 5
+    stdout: "/tmp/sleep.stdout"
+    stderr: "/tmp/sleep.stderr"
+    env:
+      OWNER: "taskmaster"
