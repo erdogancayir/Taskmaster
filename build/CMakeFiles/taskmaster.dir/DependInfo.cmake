@@ -9,6 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/erdogancayir/Desktop/empty/src/ConfigParser.cpp" "CMakeFiles/taskmaster.dir/src/ConfigParser.cpp.o" "gcc" "CMakeFiles/taskmaster.dir/src/ConfigParser.cpp.o.d"
+  "/Users/erdogancayir/Desktop/empty/src/Logger.cpp" "CMakeFiles/taskmaster.dir/src/Logger.cpp.o" "gcc" "CMakeFiles/taskmaster.dir/src/Logger.cpp.o.d"
+  "/Users/erdogancayir/Desktop/empty/src/ProcessManager.cpp" "CMakeFiles/taskmaster.dir/src/ProcessManager.cpp.o" "gcc" "CMakeFiles/taskmaster.dir/src/ProcessManager.cpp.o.d"
+  "/Users/erdogancayir/Desktop/empty/src/Shell.cpp" "CMakeFiles/taskmaster.dir/src/Shell.cpp.o" "gcc" "CMakeFiles/taskmaster.dir/src/Shell.cpp.o.d"
   "/Users/erdogancayir/Desktop/empty/src/main.cpp" "CMakeFiles/taskmaster.dir/src/main.cpp.o" "gcc" "CMakeFiles/taskmaster.dir/src/main.cpp.o.d"
   )
 

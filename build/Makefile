@@ -153,6 +153,78 @@ src/ConfigParser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/ConfigParser.cpp.s
 .PHONY : src/ConfigParser.cpp.s
 
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
+src/ProcessManager.o: src/ProcessManager.cpp.o
+.PHONY : src/ProcessManager.o
+
+# target to build an object file
+src/ProcessManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/ProcessManager.cpp.o
+.PHONY : src/ProcessManager.cpp.o
+
+src/ProcessManager.i: src/ProcessManager.cpp.i
+.PHONY : src/ProcessManager.i
+
+# target to preprocess a source file
+src/ProcessManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/ProcessManager.cpp.i
+.PHONY : src/ProcessManager.cpp.i
+
+src/ProcessManager.s: src/ProcessManager.cpp.s
+.PHONY : src/ProcessManager.s
+
+# target to generate assembly for a file
+src/ProcessManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/ProcessManager.cpp.s
+.PHONY : src/ProcessManager.cpp.s
+
+src/Shell.o: src/Shell.cpp.o
+.PHONY : src/Shell.o
+
+# target to build an object file
+src/Shell.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/Shell.cpp.o
+.PHONY : src/Shell.cpp.o
+
+src/Shell.i: src/Shell.cpp.i
+.PHONY : src/Shell.i
+
+# target to preprocess a source file
+src/Shell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/Shell.cpp.i
+.PHONY : src/Shell.cpp.i
+
+src/Shell.s: src/Shell.cpp.s
+.PHONY : src/Shell.s
+
+# target to generate assembly for a file
+src/Shell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taskmaster.dir/build.make CMakeFiles/taskmaster.dir/src/Shell.cpp.s
+.PHONY : src/Shell.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -189,6 +261,15 @@ help:
 	@echo "... src/ConfigParser.o"
 	@echo "... src/ConfigParser.i"
 	@echo "... src/ConfigParser.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
+	@echo "... src/ProcessManager.o"
+	@echo "... src/ProcessManager.i"
+	@echo "... src/ProcessManager.s"
+	@echo "... src/Shell.o"
+	@echo "... src/Shell.i"
+	@echo "... src/Shell.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
