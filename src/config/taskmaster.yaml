@@ -1,17 +1,39 @@
 programs:
-  sleep_test:
-    cmd: "/bin/sleep 5"
+  always_restart:
+    cmd: "./test_programs/exit1.sh"
     numprocs: 1
-    umask: 022
-    workingdir: "/tmpTEST"
     autostart: true
-    autorestart: "unexpected"
+    autorestart: always
     exitcodes: [0]
-    startretries: 2
-    starttime: 2
+    starttime: 1
+    startretries: 3
     stopsignal: TERM
+    stoptime: 3
+    stdout: "/tmp/always_restart.out"
+    stderr: "/tmp/always_restart.err"
+
+  expected_exit:
+    cmd: "./test_programs/exit0.sh"
+    numprocs: 1
+    autostart: true
+    autorestart: unexpected
+    exitcodes: [0]
+    starttime: 1
+    startretries: 2
+    stopsignal: TERM
+    stoptime: 3
+    stdout: "/tmp/expected_exit.out"
+    stderr: "/tmp/expected_exit.err"
+
+  trap_test:
+    cmd: "./test_programs/signal_trap.sh"
+    numprocs: 1
+    autostart: false
+    autorestart: never
+    exitcodes: [0]
+    starttime: 1
+    startretries: 1
+    stopsignal: USR1
     stoptime: 5
-    stdout: "/tmp/sleep.stdout"
-    stderr: "/tmp/sleep.stderr"
-    env:
-      OWNER: "taskmaster"
+    stdout: "/tmp/trap_test.out"
+    stderr: "/tmp/trap_test.err"
