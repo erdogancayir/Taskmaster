@@ -15,8 +15,12 @@ Shell::Shell(std::map<std::string, ProcessManager>& mgrs) : managers(mgrs) {}
 void Shell::run() {
     std::string input;
     std::cout << "taskmaster> ";
-    while (std::getline(std::cin, input)) {
-        handleCommand(input);
+    while (true) {
+        if (std::cin.peek() != EOF) {
+            std::getline(std::cin, input);
+            handleCommand(input);
+            std::cout << "taskmaster> ";
+        }
 
         for (auto& [name, manager] : managers) {
             manager.checkProcesses();
@@ -29,7 +33,6 @@ void Shell::run() {
         }
 
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
-        std::cout << "taskmaster> " << std::flush;
     }
 }
 
