@@ -14,12 +14,12 @@ Shell::Shell(std::map<std::string, ProcessManager>& mgrs) : managers(mgrs) {}
 
 void Shell::run() {
     std::string input;
-    std::cout << "taskmaster> ";
     while (true) {
+        std::cout << "taskmaster> ";
+
         if (std::cin.peek() != EOF) {
             std::getline(std::cin, input);
             handleCommand(input);
-            std::cout << "taskmaster> ";
         }
 
         for (auto& [name, manager] : managers) {
