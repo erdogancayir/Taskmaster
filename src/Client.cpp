@@ -1,32 +1,43 @@
-#include "Client.hpp"
+#include <iostream>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <unistd.h>
-#include <iostream>
-#include <cstring>
 
-void startClient(const std::string& socketPath) {
-    int fd = socket(AF_UNIX, SOCK_STREAM, 0);
-    if (fd == -1) {
-        perror("socket"); return;
+#define SOCKET_PATH "/tmp/taskmaster.sock"
+
+void startClient() {
+    int sock = socket(AF_UNIX, SOCK_STREAM, 0);
+    if (sock < 0) {
+        perror("socket");
+        return;
     }
 
-    sockaddr_un addr{};
+    sockaddr_un addr;
     addr.sun_family = AF_UNIX;
-    strncpy(addr.sun_path, socketPath.c_str(), sizeof(addr.sun_path) - 1);
+    strcpy(addr.sun_path, SOCKET_PATH);
 
-    if (connect(fd, (sockaddr*)&addr, sizeof(addr)) == -1) {
-        perror("connect"); close(fd); return;
+    if (connect(sock, (sockaddr*)&addr, sizeof(addr)) < 0) {
+        perror("connect");
+        close(sock);
+        return;
     }
 
-    std::string line;
-    std::cout << "Command> ";
-    std::getline(std::cin, line);
-    write(fd, line.c_str(), line.size());
+    std::string input;
+    std::cout << "Enter command: ";
+    while (std::getline(std::cin, input)) {
+        if (send(sock, input.c_str(), input.size(), 0) < 0) {
+            perror("send");
+            break;
+        }
 
-    char buf[1024]{};
-    ssize_t n = read(fd, buf, sizeof(buf)-1);
-    if (n > 0) std::cout << "[Client] Reply: " << buf << std::endl;
+        char buffer[1024] = {0};
+        ssize_t n = recv(sock, buffer, sizeof(buffer), 0);
+        if (n > 0) {
+            std::cout << "Response: " << buffer << std::endl;
+        }
 
-    close(fd);
+        std::cout << "Enter command: ";
+    }
+
+    close(sock);
 }

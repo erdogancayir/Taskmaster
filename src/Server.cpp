@@ -5,38 +5,65 @@
 #include <iostream>
 #include <cstring>
 
-void startServer(const std::string& socketPath) {
-    int serverFd = socket(AF_UNIX, SOCK_STREAM, 0);
-    if (serverFd == -1) {
-        perror("socket"); return;
+#include <iostream>
+#include <sys/socket.h>
+#include <sys/un.h>
+#include <unistd.h>
+#include <cstring>
+#include <thread>
+
+#define SOCKET_PATH "/tmp/taskmaster.sock"
+
+void handleClient(int clientSocket) {
+    char buffer[1024];
+    while (true) {
+        ssize_t n = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);
+        if (n <= 0) break;
+        buffer[n] = '\0';
+        std::cout << "Received: " << buffer << std::endl;
+
+        std::string response = "ACK: ";
+        response += buffer;
+        send(clientSocket, response.c_str(), response.size(), 0);
+    }
+    close(clientSocket);
+}
+
+void startServer() {
+    unlink(SOCKET_PATH);
+
+    int serverSocket = socket(AF_UNIX, SOCK_STREAM, 0);
+    if (serverSocket < 0) {
+        perror("socket");
+        return;
     }
 
-    sockaddr_un addr{};
+    sockaddr_un addr;
     addr.sun_family = AF_UNIX;
-    strncpy(addr.sun_path, socketPath.c_str(), sizeof(addr.sun_path) - 1);
-    unlink(socketPath.c_str());
+    strcpy(addr.sun_path, SOCKET_PATH);
 
-    if (bind(serverFd, (sockaddr*)&addr, sizeof(addr)) == -1) {
-        perror("bind"); close(serverFd); return;
-    }
-    if (listen(serverFd, 5) == -1) {
-        perror("listen"); close(serverFd); return;
+    if (bind(serverSocket, (sockaddr*)&addr, sizeof(addr)) < 0) {
+        perror("bind");
+        close(serverSocket);
+        return;
     }
 
-    std::cout << "[Server] Listening on " << socketPath << std::endl;
+    if (listen(serverSocket, 5) < 0) {
+        perror("listen");
+        close(serverSocket);
+        return;
+    }
+
+    std::cout << "Server listening on " << SOCKET_PATH << std::endl;
 
     while (true) {
-        int clientFd = accept(serverFd, nullptr, nullptr);
-        if (clientFd == -1) continue;
-
-        char buf[1024]{};
-        ssize_t n = read(clientFd, buf, sizeof(buf)-1);
-        if (n > 0) {
-            std::cout << "[Server] Received: " << buf << std::endl;
-            std::string reply = "Command received: ";
-            reply += buf;
-            write(clientFd, reply.c_str(), reply.size());
+        int clientSocket = accept(serverSocket, nullptr, nullptr);
+        if (clientSocket < 0) {
+            perror("accept");
+            continue;
         }
-        close(clientFd);
+        std::thread(handleClient, clientSocket).detach();
     }
+
+    close(serverSocket);
 }

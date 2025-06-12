@@ -3,14 +3,14 @@
 #include <sstream>
 #include "Logger.hpp"
 #include "ConfigParser.hpp"
-#include "ProcessManager.hpp"
 #include <csignal>
 #include <atomic>
 #include <thread>
 
 extern std::atomic<bool> reloadRequested;
 
-Shell::Shell(std::map<std::string, ProcessManager>& mgrs) : managers(mgrs) {}
+Shell::Shell(std::map<std::string, ProcessManager>& mgrs)
+    : managers(mgrs), commandHandler(mgrs) {}
 
 void Shell::run() {
     std::string input;
@@ -37,50 +37,13 @@ void Shell::run() {
 }
 
 void Shell::handleCommand(const std::string& input) {
-    std::istringstream iss(input);
-    std::string command, arg;
-    iss >> command >> arg;
-
-    if (command == "status") {
-        printStatus();
-    } else if (command == "start") {
-        auto it = managers.find(arg);
-        if (it != managers.end()) {
-            it->second.start();
-            std::cout << "Started: " << arg << "\n";
-        } else {
-            std::cout << "No such program: " << arg << "\n";
-        }
-    } else if (command == "stop") {
-        auto it = managers.find(arg);
-        if (it != managers.end()) {
-            it->second.stop();
-            std::cout << "Stopped: " << arg << "\n";
-        } else {
-            std::cout << "No such program: " << arg << "\n";
-        }
-    } else if (command == "restart") {
-        auto it = managers.find(arg);
-        if (it != managers.end()) {
-            it->second.restart();
-            std::cout << "Restarted: " << arg << "\n";
-        } else {
-            std::cout << "No such program: " << arg << "\n";
-        }
-    }
-    else if (command == "quit") {
+    if (input == "quit") {
         std::exit(0);
-    } else {
-        std::cout << "Unknown command.\n";
     }
-}
 
-void Shell::printStatus() const {
-    for (const auto& [name, manager] : managers) {
-        std::cout << name << ": " << (manager.isRunning() ? "Running" : "Stopped") << "\n";
-    }
+    std::string output = commandHandler.handleCommand(input);
+    std::cout << output << std::endl;
 }
-
 
 void Shell::reloadConfig() {
     const std::string configFile = "../src/config/taskmaster.yaml";
@@ -91,15 +54,13 @@ void Shell::reloadConfig() {
         if (it == managers.end()) {
             Logger::log("New program added: " + name);
             managers.emplace(name, newConfig);
-            if (newConfig.autostart)
-            {
+            if (newConfig.autostart) {
                 auto it = managers.find(name);
                 if (it != managers.end()) {
                     it->second.start();
                 }
             }
         } else {
-            // there is same name but setting can be changed
             if (it->second.getConfig().cmd != newConfig.cmd) {
                 Logger::log("Program changed: " + name);
                 it->second.stop();
@@ -109,7 +70,6 @@ void Shell::reloadConfig() {
         }
     }
 
-    // stop deleted programs
     for (auto it = managers.begin(); it != managers.end(); ) {
         if (newConfigs.find(it->first) == newConfigs.end()) {
             Logger::log("Program removed: " + it->first);
