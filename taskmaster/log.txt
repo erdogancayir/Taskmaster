@@ -1,0 +1,8 @@
+[2025-06-15 12:33:02] Taskmaster starting with config: ../taskmasterd/config/taskmaster.yaml
+[2025-06-15 12:33:02] Configuration parsed successfully.
+[2025-06-15 12:33:02] Server started on socket: /tmp/taskmaster.sock
+[2025-06-15 12:33:02] Server stopped.
+[2025-06-15 12:33:44] Taskmaster starting with config: ../taskmasterd/config/taskmaster.yaml
+[2025-06-15 12:33:44] Configuration parsed successfully.
+[2025-06-15 12:33:44] Server started on socket: /tmp/taskmaster.sock
+[2025-06-15 12:34:36] Received command: ll

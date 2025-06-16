@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/erdogancayir/Desktop/42/empty/taskmaster/build/cmake_install.cmake",
+		"/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd/cmake_install.cmake",
+		"/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterctl/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,3 +1,0 @@
-/Users/erdogancayir/Desktop/42/empty/build/CMakeFiles/taskmaster.dir
-/Users/erdogancayir/Desktop/42/empty/build/CMakeFiles/edit_cache.dir
-/Users/erdogancayir/Desktop/42/empty/build/CMakeFiles/rebuild_cache.dir

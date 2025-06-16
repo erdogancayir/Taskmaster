@@ -1,0 +1,8 @@
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles/edit_cache.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles/rebuild_cache.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd/CMakeFiles/taskmasterd.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd/CMakeFiles/edit_cache.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd/CMakeFiles/rebuild_cache.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterctl/CMakeFiles/taskmasterctl.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterctl/CMakeFiles/edit_cache.dir
+/Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterctl/CMakeFiles/rebuild_cache.dir
