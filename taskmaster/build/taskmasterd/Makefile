@@ -178,6 +178,54 @@ src/LogManager.cpp.s:
 	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/LogManager.cpp.s
 .PHONY : src/LogManager.cpp.s
 
+src/Supervisor.o: src/Supervisor.cpp.o
+.PHONY : src/Supervisor.o
+
+# target to build an object file
+src/Supervisor.cpp.o:
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o
+.PHONY : src/Supervisor.cpp.o
+
+src/Supervisor.i: src/Supervisor.cpp.i
+.PHONY : src/Supervisor.i
+
+# target to preprocess a source file
+src/Supervisor.cpp.i:
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.i
+.PHONY : src/Supervisor.cpp.i
+
+src/Supervisor.s: src/Supervisor.cpp.s
+.PHONY : src/Supervisor.s
+
+# target to generate assembly for a file
+src/Supervisor.cpp.s:
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.s
+.PHONY : src/Supervisor.cpp.s
+
+src/deamon/Daemonize.o: src/deamon/Daemonize.cpp.o
+.PHONY : src/deamon/Daemonize.o
+
+# target to build an object file
+src/deamon/Daemonize.cpp.o:
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o
+.PHONY : src/deamon/Daemonize.cpp.o
+
+src/deamon/Daemonize.i: src/deamon/Daemonize.cpp.i
+.PHONY : src/deamon/Daemonize.i
+
+# target to preprocess a source file
+src/deamon/Daemonize.cpp.i:
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.i
+.PHONY : src/deamon/Daemonize.cpp.i
+
+src/deamon/Daemonize.s: src/deamon/Daemonize.cpp.s
+.PHONY : src/deamon/Daemonize.s
+
+# target to generate assembly for a file
+src/deamon/Daemonize.cpp.s:
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build && $(MAKE) $(MAKESILENT) -f taskmasterd/CMakeFiles/taskmasterd.dir/build.make taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.s
+.PHONY : src/deamon/Daemonize.cpp.s
+
 src/deamon/Server.o: src/deamon/Server.cpp.o
 .PHONY : src/deamon/Server.o
 
@@ -241,6 +289,12 @@ help:
 	@echo "... src/LogManager.o"
 	@echo "... src/LogManager.i"
 	@echo "... src/LogManager.s"
+	@echo "... src/Supervisor.o"
+	@echo "... src/Supervisor.i"
+	@echo "... src/Supervisor.s"
+	@echo "... src/deamon/Daemonize.o"
+	@echo "... src/deamon/Daemonize.i"
+	@echo "... src/deamon/Daemonize.s"
 	@echo "... src/deamon/Server.o"
 	@echo "... src/deamon/Server.i"
 	@echo "... src/deamon/Server.s"

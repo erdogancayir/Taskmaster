@@ -3,6 +3,8 @@
 #include <string>
 #include <map>
 
+#include "Supervisor.hpp"
+
 struct ProgramConfig
 {
     std::string name;
@@ -29,3 +31,4 @@ struct Config
 
 Config parseConfig(const std::string& filePath);
 bool parseArguments(int ac, char **av, std::string &configFile, std::string &logFile);
+ProgramSpec toSpec(const ProgramConfig& pc);

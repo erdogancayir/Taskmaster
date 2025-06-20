@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/Config.cpp" "taskmasterd/CMakeFiles/taskmasterd.dir/src/Config.cpp.o" "gcc" "taskmasterd/CMakeFiles/taskmasterd.dir/src/Config.cpp.o.d"
   "/Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/LogManager.cpp" "taskmasterd/CMakeFiles/taskmasterd.dir/src/LogManager.cpp.o" "gcc" "taskmasterd/CMakeFiles/taskmasterd.dir/src/LogManager.cpp.o.d"
+  "/Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/Supervisor.cpp" "taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o" "gcc" "taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o.d"
+  "/Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Daemonize.cpp" "taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o" "gcc" "taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o.d"
   "/Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Server.cpp" "taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o" "gcc" "taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o.d"
   "/Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/main.cpp" "taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o" "gcc" "taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o.d"
   )

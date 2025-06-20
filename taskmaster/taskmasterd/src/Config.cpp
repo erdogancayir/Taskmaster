@@ -3,6 +3,32 @@
 #include <stdexcept>
 #include <iostream>
 
+ProgramSpec toSpec(const ProgramConfig& pc)
+{
+    ProgramSpec s;
+    s.name         = pc.name;
+    s.cmd          = pc.cmd;
+    s.numprocs     = pc.numprocs;
+    s.umask        = pc.umask;
+    s.workingdir   = pc.workingdir;
+    s.autostart    = pc.autostart;
+
+    // map “autorestart” string → enum
+    if (pc.autorestart == "always")      s.autorestart = RestartPolicy::ALWAYS;
+    else if (pc.autorestart == "never")  s.autorestart = RestartPolicy::NEVER;
+    else                                 s.autorestart = RestartPolicy::UNEXPECTED;
+
+    s.exitcodes    = pc.exitcodes;
+    s.startretries = pc.startretries;
+    s.starttime    = pc.starttime;
+    s.stopsignal   = pc.stopsignal;
+    s.stoptime     = pc.stoptime;
+    s.stdout_path  = pc.stdout_log;
+    s.stderr_path  = pc.stderr_log;
+    s.environment  = pc.env;
+    return s;
+}
+
 Config parseConfig(const std::string& filePath)
 {
     YAML::Node root = YAML::LoadFile(filePath);

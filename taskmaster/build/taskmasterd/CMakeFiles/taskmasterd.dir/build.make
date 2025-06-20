@@ -100,10 +100,38 @@ taskmasterd/CMakeFiles/taskmasterd.dir/src/LogManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/taskmasterd.dir/src/LogManager.cpp.s"
 	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/LogManager.cpp -o CMakeFiles/taskmasterd.dir/src/LogManager.cpp.s
 
+taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/flags.make
+taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o: /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/Supervisor.cpp
+taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o"
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o -MF CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o.d -o CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o -c /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/Supervisor.cpp
+
+taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.i"
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/Supervisor.cpp > CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.i
+
+taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.s"
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/Supervisor.cpp -o CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.s
+
+taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/flags.make
+taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o: /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Daemonize.cpp
+taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o"
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o -MF CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o.d -o CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o -c /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Daemonize.cpp
+
+taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.i"
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Daemonize.cpp > CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.i
+
+taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.s"
+	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Daemonize.cpp -o CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.s
+
 taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/flags.make
 taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o: /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Server.cpp
 taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o"
 	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o -MF CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o.d -o CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o -c /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/deamon/Server.cpp
 
 taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.i: cmake_force
@@ -117,7 +145,7 @@ taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.s: cmake_force
 taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/flags.make
 taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o: /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/main.cpp
 taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o: taskmasterd/CMakeFiles/taskmasterd.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o"
 	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o -MF CMakeFiles/taskmasterd.dir/src/main.cpp.o.d -o CMakeFiles/taskmasterd.dir/src/main.cpp.o -c /Users/erdogancayir/Desktop/42/empty/taskmaster/taskmasterd/src/main.cpp
 
 taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.i: cmake_force
@@ -132,6 +160,8 @@ taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.s: cmake_force
 taskmasterd_OBJECTS = \
 "CMakeFiles/taskmasterd.dir/src/Config.cpp.o" \
 "CMakeFiles/taskmasterd.dir/src/LogManager.cpp.o" \
+"CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o" \
+"CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o" \
 "CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o" \
 "CMakeFiles/taskmasterd.dir/src/main.cpp.o"
 
@@ -140,12 +170,14 @@ taskmasterd_EXTERNAL_OBJECTS =
 
 taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/src/Config.cpp.o
 taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/src/LogManager.cpp.o
+taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/src/Supervisor.cpp.o
+taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Daemonize.cpp.o
 taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/src/deamon/Server.cpp.o
 taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/src/main.cpp.o
 taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/build.make
 taskmasterd/taskmasterd: /opt/homebrew/Cellar/yaml-cpp/0.8.0/lib/libyaml-cpp.dylib
 taskmasterd/taskmasterd: taskmasterd/CMakeFiles/taskmasterd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable taskmasterd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/erdogancayir/Desktop/42/empty/taskmaster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable taskmasterd"
 	cd /Users/erdogancayir/Desktop/42/empty/taskmaster/build/taskmasterd && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/taskmasterd.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
