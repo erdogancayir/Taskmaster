@@ -9,66 +9,47 @@
 #include "LogManager.hpp"
 #include "Server.hpp"
 
-int main (int ac, char **av)
+int main(int ac, char** av)
 {
-    std::string configFilePath;
-    std::string logFilePath;
-
-    if (!parseArguments(ac, av, configFilePath, logFilePath))
+    std::string cfgPath, logPath;
+    if (!parseArguments(ac, av, cfgPath, logPath))
         return EXIT_FAILURE;
 
-    try
-    {
-        // 💥 Become daemon here
-        daemonize();
+    daemonize();
 
-        std::cout << "[taskmasterd] Starting Taskmaster Daemon...\n";
-        return EXIT_SUCCESS;
+    try {
+        LogManager::instance().init(logPath);
+        LogManager::instance().log("Taskmaster daemon starting with " + cfgPath);
 
-        LogManager::instance().init(logFilePath);
-
-        Config cfg = parseConfig(configFilePath);
-
+        Config cfg = parseConfig(cfgPath);
         MasterSupervisor master;
-
-        /* --- build supervisors from config --- */
-        for (auto& [name, pc] : cfg.programs) {
-            auto spec = toSpec(pc);
-            master.addProgram(spec);
-        }
-
-        /* --- start programs that have autostart=true --- */
+        for (auto& [_, pc] : cfg.programs) master.addProgram(toSpec(pc));
         master.startAll();
 
-        /* --- background monitor loop --- */
         std::atomic<bool> running{true};
-        std::thread monitor([&] {
+        std::thread monitor([&]{
             while (running) {
                 master.updateAll();
                 std::this_thread::sleep_for(std::chrono::milliseconds(500));
             }
         });
 
-         /* --- simple signal handlers for clean exit --- */
-        std::signal(SIGINT,  [](int){});
-        std::signal(SIGTERM, [](int){});
+        auto stopHandler = [&](int){ running = false; };
+        std::signal(SIGINT,  +[](int sig){  });
+        std::signal(SIGTERM, +[](int sig){  });
 
-        /* --- launch socket server (unchanged) --- */
         Server server("/tmp/taskmaster.sock");
         server.start();
 
-        std::cout << "[taskmasterd] Running. Ctrl-C to quit.\n";
-        pause();                       // wait for signal
+        while (running) pause();     // sleep until a signal flips the flag
 
-        /* --- shutdown path --- */
-        running = false;
-        monitor.join();
-        master.stopAll();
         server.stop();
+        master.stopAll();
+        monitor.join();
     }
-    catch(const std::exception& ex)
-    {
-        std::cerr << "Error: " << ex.what() << std::endl;
+    catch (const std::exception& ex) {
+        // LogManager may not be ready, so write to stderr as fallback
+        std::cerr << "Error: " << ex.what() << '\n';
         return EXIT_FAILURE;
     }
 }
